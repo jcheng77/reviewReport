@@ -1,0 +1,5 @@
+{
+  "name": "Audit Review Mobile UI",
+  "description": "A mobile-first document review interface showing audit risks and findings.",
+  "requestFramePermissions": []
+}

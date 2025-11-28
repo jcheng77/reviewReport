@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Ma+Shan+Zheng&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-paper: #FAFAF9;
+        --color-ink: #1C1917;
+        --color-official-red: #B91C1C;
+        --color-stamp: #DC2626;
+        --color-warning: #B45309; /* Ochre/Rust for Medium Risk */
+      }
+
+      body {
+        font-family: 'Noto Serif SC', serif;
+        background-color: #CBD5E1; /* Weak Blue / Haze Blue */
+        color: var(--color-ink);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Hide Scrollbar explicitly for that app-like feel */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+
+      /* Paper Texture with Noise */
+      .bg-paper {
+        background-color: var(--color-paper);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+      }
+
+      /* Typography Classes */
+      .font-official { font-family: 'Noto Serif SC', serif; }
+      .font-calligraphy { font-family: 'Ma Shan Zheng', cursive; }
+      .font-mono-code { font-family: 'Space Mono', monospace; }
+
+      /* Animations */
+      @keyframes stampDrop {
+        0% { transform: scale(3) rotate(15deg); opacity: 0; }
+        50% { transform: scale(0.9) rotate(-2deg); opacity: 1; }
+        70% { transform: scale(1.05) rotate(-2deg); }
+        100% { transform: scale(1) rotate(-2deg); }
+      }
+
+      @keyframes printReveal {
+        0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+        100% { clip-path: inset(0 0 0 0); opacity: 1; }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .animate-stamp {
+        animation: stampDrop 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      
+      .animate-print {
+        animation: printReveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      }
+
+      .animate-fade {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
